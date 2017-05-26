@@ -109,9 +109,9 @@ public abstract class BaseJsonValidator implements JsonValidator {
     protected ValidationMessage buildValidationMessage(String at, String... arguments) {
         ValidationMessage.Builder builder = new ValidationMessage.Builder();
         if (isUsingCustomErrorCode()) {
-            builder.code(getErrorCode()).path(at).arguments(arguments).type(validatorType.getValue());
+            builder.code(getErrorCode()).path(at).parentSchema(parentSchema).arguments(arguments).type(validatorType.getValue());
         } else {
-            builder.code(validatorType.getErrorCode()).path(at).arguments(arguments)
+            builder.code(validatorType.getErrorCode()).path(at).parentSchema(parentSchema).arguments(arguments)
                     .format(validatorType.getMessageFormat()).type(validatorType.getValue());
         }
         return builder.build();

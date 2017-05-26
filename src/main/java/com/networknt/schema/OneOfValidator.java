@@ -62,12 +62,6 @@ public class OneOfValidator extends BaseJsonValidator implements JsonValidator {
             }
         }
         
-        if (numberOfValidSchema == 0) {
-        	errors = errors.stream()
-        		.filter(msg -> !ValidatorTypeCode.ADDITIONAL_PROPERTIES
-        							.equals(ValidatorTypeCode.fromValue(msg.getType())))
-        		.collect(Collectors.toSet());
-        }
         if (numberOfValidSchema > 1) {
         	errors = new HashSet<>();
         	errors.add(buildValidationMessage(at, ""));

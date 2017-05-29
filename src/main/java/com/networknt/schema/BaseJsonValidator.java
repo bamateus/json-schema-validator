@@ -41,15 +41,15 @@ public abstract class BaseJsonValidator implements JsonValidator {
         this.subSchema = obainSubSchemaNode(schemaNode);
     }
 
-    protected String getSchemaPath() {
+    public String getSchemaPath() {
         return schemaPath;
     }
 
-    protected JsonNode getSchemaNode() {
+    public JsonNode getSchemaNode() {
         return schemaNode;
     }
 
-    protected JsonSchema getParentSchema() {
+    public JsonSchema getParentSchema() {
         return parentSchema;
     }
     
@@ -60,7 +60,7 @@ public abstract class BaseJsonValidator implements JsonValidator {
     protected boolean hasSubSchema() {
         return subSchema != null;
     }
-    
+
     protected JsonSchema obainSubSchemaNode(JsonNode schemaNode){
         JsonNode node = schemaNode.get("id");
         if(node == null) return null;

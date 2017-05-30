@@ -85,7 +85,6 @@ public class ValidationMessage {
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
         if (code != null ? !code.equals(that.code) : that.code != null) return false;
         if (path != null ? !path.equals(that.path) : that.path != null) return false;
-        if (parentSchema != null ? !parentSchema.equals(that.parentSchema) : that.parentSchema != null) return false;
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
         if (!Arrays.equals(arguments, that.arguments)) return false;
         return !(message != null ? !message.equals(that.message) : that.message != null);
@@ -97,7 +96,6 @@ public class ValidationMessage {
         int result = type != null ? type.hashCode() : 0;
         result = 31 * result + (code != null ? code.hashCode() : 0);
         result = 31 * result + (path != null ? path.hashCode() : 0);
-        result = 31 * result + (parentSchema != null ? parentSchema.hashCode() : 0);
         result = 31 * result + (arguments != null ? Arrays.hashCode(arguments) : 0);
         result = 31 * result + (message != null ? message.hashCode() : 0);
         return result;

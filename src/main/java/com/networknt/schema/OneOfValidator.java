@@ -52,7 +52,7 @@ public class OneOfValidator extends BaseJsonValidator implements JsonValidator {
         // Please refer to https://github.com/networknt/json-schema-validator/issues/32 for more details.
 
         // The "@type" value on the request payload.
-        JsonNode nodeType = node.findValue("@type");
+        JsonNode nodeType = node.get("@type");
         if(nodeType != null) {
             // The relation between the "@type" value on the request payload and the schema is through the schema "title" attribute.
             // On the schemas list, we have to return only the schema that matches with the "@type" value.

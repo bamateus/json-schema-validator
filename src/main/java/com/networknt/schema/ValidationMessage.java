@@ -23,7 +23,6 @@ public class ValidationMessage {
     private String type;
     private String code;
     private String path;
-    private JsonSchema parentSchema;
     private String[] arguments;
     private String message;
 
@@ -44,14 +43,6 @@ public class ValidationMessage {
 
     void setPath(String path) {
         this.path = path;
-    }
-
-    public JsonSchema getParentSchema() {
-        return parentSchema;
-    }
-
-    void setParentSchema(JsonSchema parentSchema) {
-        this.parentSchema = parentSchema;
     }
 
     String[] getArguments() {
@@ -113,7 +104,6 @@ public class ValidationMessage {
         private String type;
         private String code;
         private String path;
-        private JsonSchema parentSchema;
         private String[] arguments;
         private MessageFormat format;
 
@@ -132,11 +122,6 @@ public class ValidationMessage {
             return this;
         }
 
-        public Builder parentSchema(JsonSchema parentSchema) {
-            this.parentSchema = parentSchema;
-            return this;
-        }
-
         public Builder arguments(String... arguments) {
             this.arguments = arguments;
             return this;
@@ -152,7 +137,6 @@ public class ValidationMessage {
             msg.setType(type);
             msg.setCode(code);
             msg.setPath(path);
-            msg.setParentSchema(parentSchema);
             msg.setArguments(arguments);
 
             if (format != null) {
